@@ -1,5 +1,5 @@
 # 
-class mcafee {
+class puppet_mcafee {
   archive { 'c:\\Windows\\Temp\\mcafeeclean.zip':
     ensure        => present,
     extract       => true,
