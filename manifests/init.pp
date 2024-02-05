@@ -9,7 +9,7 @@ class mcafee {
 
   file { 'C:/Windows/Temp/remove_mcafee.ps1':
     ensure => present,
-    source => 'puppet:///modules/it4smart-mcafee/remove_mcafee.ps1',
+    source => 'puppet:///modules/puppet_mcafee/remove_mcafee.ps1',
   }
 
   exec { 'uninstall-mcafee':
