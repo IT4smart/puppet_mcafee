@@ -8,7 +8,7 @@ class puppet_mcafee {
   } ->
 
   file { 'C:\\Windows\\Temp\\remove_mcafee.ps1':
-    ensure  => present,
+    ensure  => file,
     content => @(EOF),
       # Run the cleanup tool
       $program= "c:\Windows\Temp\McCleanup.exe"
@@ -24,7 +24,7 @@ class puppet_mcafee {
   } ->
 
   exec { 'uninstall-mcafee':
-    command  => file('C:\\Windows\\Temp\\remove_mcafee.ps1'),
+    command  => 'C:/Windows/Temp/remove_mcafee.ps1',
     provider => powershell,
     onlyif   => 'Get-Service mc-wps-update | Where-Object {$_.Status -eq "Stopped"}',
   }
