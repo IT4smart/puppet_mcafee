@@ -1,0 +1,11 @@
+version: '3'
+services:
+    pdk_mcafee:
+      build:
+        context: .
+      security_opt:
+        - seccomp:unconfined
+      volumes:
+        - ../:/workspace
+        - ~/.ssh:/mnt/ssh
+      entrypoint: [ "tail", "-f", "/dev/null" ]

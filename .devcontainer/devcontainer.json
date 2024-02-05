@@ -1,0 +1,31 @@
+{
+	"name": "PDK - McAfee",
+	"dockerComposeFile": [
+        "docker-compose.yml"
+    ],
+    "service": "pdk_mcafee",
+    "runServices": [
+        "pdk_mcafee"
+    ],
+    "shutdownAction": "stopCompose",
+    "workspaceFolder": "/workspace",
+    "postStartCommand": "/root/post-start.sh",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "editor.insertSpaces": true,
+                "editor.tabSize": 2,
+                "hiera-eyaml": {
+                    "eyamlPath": "/usr/bin/eyaml",
+                    "publicKeyPath": "/workspace/keys/public_key.pkcs7.pem",
+                    "privateKeyPath": "/workspace/keys/private_key.pkcs7.pem"
+                }
+            },
+            "extensions": [
+                "puppet.puppet-vscode",
+                "rebornix.Ruby",
+                "brandontosch.hiera-eyaml"
+            ]
+        }
+    }
+}
