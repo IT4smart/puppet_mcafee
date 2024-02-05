@@ -7,7 +7,7 @@ class puppet_mcafee {
     source        => 'https://github.com/andrew-s-taylor/public/raw/main/De-Bloat/mcafeeclean.zip',
   }
 
-  file { 'C:/Windows/Temp/remove_mcafee.ps1':
+  file { 'C:\\Windows\\Temp\\remove_mcafee.ps1':
     ensure => present,
     source => 'puppet:///modules/puppet_mcafee/remove_mcafee.ps1',
   }
